@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RESUMATCH - AI Resume Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            RESU<span>MATCH</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#analyze">Analyze</a>
+            <a href="#resultsSection">Results</a>
+            <a href="#about">About</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                AI Resume Analyzer
+                <br>
+                <span>&amp; Job Matcher</span>
+            </h1>
+
+            <p>
+                Analyze your resume, discover skill gaps,
+                and find ways to improve your job readiness.
+            </p>
+
+            <div class="hero-buttons">
+
+                <input
+                    type="file"
+                    id="resumeInput"
+                    accept=".pdf"
+                    style="display: none;"
+                    onchange="uploadResume(this.files[0])"
+                >
+
+                <label for="resumeInput" class="primary-btn">
+                    Upload Resume →
+                </label>
+
+                <a href="#analyze" class="secondary-btn">
+                    Analyze Resume
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="resume-illustration">
+
+            <div class="resume-card">
+
+                <div class="profile-circle"></div>
+
+                <div class="resume-title">RESUME</div>
+
+                <div class="resume-line"></div>
+                <div class="resume-line short"></div>
+
+                <div class="skills">
+                    <span>Python</span>
+                    <span>Machine Learning</span>
+                    <span>SQL</span>
+                    <span>Data Analysis</span>
+                </div>
+
+            </div>
+
+            <div class="match-card">
+                <h3>Job Match</h3>
+                <div class="score">AI</div>
+                <p class="match">✓ Matching Skills</p>
+                <p class="match">✓ Missing Skills</p>
+                <p class="missing">✓ Smart Suggestions</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features Section -->
+    <section class="features" id="about">
+
+        <div class="feature">
+            <div class="feature-icon">📄</div>
+            <h3>Resume Analysis</h3>
+            <p>Extract and analyze resume information.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🎯</div>
+            <h3>Job Matching</h3>
+            <p>Compare your resume with job requirements.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">📊</div>
+            <h3>Smart Suggestions</h3>
+            <p>Discover skills you may need to improve.</p>
+        </div>
+
+    </section>
+
+
+    <!-- Analyze Section -->
+    <section class="analyze-section" id="analyze">
+
+        <h2>Analyze Your Resume</h2>
+
+        <p class="analyze-subtitle">
+            Upload your resume and enter a job description
+            to see how well you match.
+        </p>
+
+        <div class="analyze-box">
+
+            <div class="upload-status">
+                <span id="uploadStatus">No resume uploaded</span>
+            </div>
+
+            <label for="jobDescription">
+                Job Description
+            </label>
+
+            <textarea
+                id="jobDescription"
+                placeholder="Paste the job description here..."
+            ></textarea>
+
+            <button
+                type="button"
+                class="primary-btn analyze-btn"
+                onclick="analyzeResume()"
+            >
+                Analyze Resume →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Results Section -->
+    <section
+        class="results-section"
+        id="resultsSection"
+        style="display: none;"
+    >
+
+        <h2>Resume Analysis Results</h2>
+
+        <div class="result-card">
+
+            <!-- Match Score -->
+            <div class="score-box">
+                <h3>Resume–Job Match</h3>
+
+                <div id="matchScore">0%</div>
+
+                <p>Match Score</p>
+            </div>
+
+            <!-- Matching Skills -->
+            <div class="skills-box">
+                <h3>Matching Skills</h3>
+
+                <div id="matchingSkills">
+                    Analyze your resume to see matching skills.
+                </div>
+            </div>
+
+            <!-- Missing Skills -->
+            <div class="skills-box missing-box">
+                <h3>Missing Skills</h3>
+
+                <div id="missingSkills">
+                    Analyze your resume to see missing skills.
+                </div>
+            </div>
+
+            <!-- Smart Suggestions -->
+            <div class="skills-box suggestions-box">
+                <h3>💡 Smart Suggestions</h3>
+
+                <ul id="suggestionsList">
+                    <li>Suggestions will appear here after analysis.</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 RESUMATCH | AI Resume Analyzer &amp; Job Matcher</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
